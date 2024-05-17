@@ -39,8 +39,6 @@
     <script src="//unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- 커스터마이징 -->
     <link rel="stylesheet" href="/css/common.min.css">
-    <link rel="stylesheet" href="/css/sh.min.css">
-    <link rel="stylesheet" href="/css/je.min.css">
     <link rel="stylesheet" href="/css/hj.min.css">
     <title>WAYO</title>
 </head>
@@ -111,7 +109,41 @@
             </li>
         </ul>
     </header>    
-    <section id="main_slide"></section>
+    <section id="main_slide">
+        <div class="swiper mySwiper" id="hj_swiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide hj-slide1">                
+                <p></p>                
+              </div>
+              <div class="swiper-slide hj-slide2">                
+                <p></p>                
+              </div>
+              <div class="swiper-slide hj-slide3">               
+                <p></p>                               
+              </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <script>
+            var swiper = new Swiper("#hj_swiper", {
+              spaceBetween: 30,
+              centeredSlides: true,
+              loop:true,
+            //   autoplay: {
+            //     delay: 2500,
+            //     disableOnInteraction: false,
+            //   },
+              pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              },
+            });
+          </script>
+    </section>
     <section id="main_service"></section>
     <section id="live_review"></section>
     <section id="with_place"></section>
@@ -200,7 +232,7 @@
                 </ul>
             </div>
             <div class="ft_left d-flex align-items-end">
-                <h1><a href="javascript:void(0)"><img src="logo.png" alt=""></a></h1>
+                <h1><a href="javascript:void(0)"><img src="/img/logo.png" alt=""></a></h1>
             </div>
         </div>
     </footer>
