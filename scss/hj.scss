@@ -1,4 +1,71 @@
 #hd{
+    h1{
+        img{
+            height: 2rem;
+        }
+    }
+    .d1{
+        &:hover{
+            &:before{
+                content: "";
+                background-color: #ffffffc0;
+                border-top: 1px solid #6A92FE;
+                position: absolute;
+                top: 100%;
+                left: 0; right: 0;
+                height: 205px;
+            }
+            .d1_li{ 
+                &:hover{
+                    .d1_a{color: #6A92FE;}
+                }
+                .d2{
+                    .d2_li{
+                        &:hover{
+                            a{
+                                color:#6A92FE;
+                            }
+                        }                        
+                    }                    
+                    padding: 1rem 0; 
+                    max-height: 205px;                                       
+                }
+            }
+        }   
+        &:before{
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 0; right: 0;
+            height: 0px;
+            overflow: hidden;
+            transition: .5s;
+            border-top: 1px solid transparent;
+        }
+        .d1_li{
+            padding:1rem 2rem;           
+            .d1_a{
+                font-size: 1.4rem;
+            }
+            .d2{
+                top:100%;
+                transform: translateX(-50%);
+                left: 50%;
+                max-height: 0;
+                overflow: hidden;
+                transition: .5s;
+                .d2_li{
+                    white-space: nowrap;
+                    text-align: center;
+                    margin: 0.5rem 0;
+                    letter-spacing: 0.085rem;
+                    a{
+                        font-size: 1.05rem;
+                    }
+                }
+            }
+        }
+    }
     .lnb{
         .searchIcon{
             font-size: 1.3rem;
@@ -10,6 +77,63 @@
         }
     }
 }
+// #app_download{
+//     position: relative;
+//     background-color: #6A92FE;
+//     background-image: url(//hyunjiq.github.io/petopia/img/img_je/bn_animal.svg);
+//     background-repeat: no-repeat; /* 이미지 반복 설정 */
+//     background-size: contain; /* 이미지 크기 조절 */
+//     background-position: center;
+//     padding: 4rem 0;
+//     &:before {
+//         content:"";
+//         position:absolute;
+//         left:0;
+//         top: 0;
+//         bottom:0;
+//         width: 300px;
+//         background-repeat: no-repeat; 
+//         background-size: cover;      
+//         background-image: url(//hyunjiq.github.io/petopia/img/img_je/bn_cloud1.svg);
+//     }
+//    &:after {
+//     content:"";
+//         background-image: url(//hyunjiq.github.io/petopia/img/img_je/bn_cloud2.svg);
+//         position:absolute;
+//         right:0px;
+//         top: 0;
+//         bottom: 0px;
+//         width: 300px;
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//     }
+//     #jeAppbanner{ 
+    
+//         .app_come{
+//                 font-weight: bold; 
+//             }        
+//             .app_down{
+//                 background-color: #FFFFFF;
+//                 border-radius: 30px;
+//                 width: 300px;
+//                 height: 60px;
+//                 align-items:center;
+//                 justify-content: center;
+//                 text-decoration: none;
+//             }
+//     }
+    
+
+//     // .app_bg1, .app_bg2, .app_bg3 {
+//     //     position: absolute;
+//     //     // width: 100%;
+//     //     // height: 100%;
+//     //     // background-size: cover;
+//     // }
+    
+    
+    
+// } 
 #quik{
     position: fixed;
     bottom: 2rem;
