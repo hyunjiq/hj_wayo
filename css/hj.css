@@ -10,6 +10,7 @@
 }
 
 #hd {
+  width: 100vw;
   z-index: 100;
 }
 #hd h1 img {
@@ -71,23 +72,36 @@
 }
 #hd .lnb .searchIcon {
   font-size: 1.3rem;
-  line-height: 1.1;
+  line-height: 1.85;
+}
+#hd .lnb .searchIcon .form-show {
+  right: 7rem;
+}
+#hd .lnb .searchIcon .form-show .a-search {
+  display: block;
+  padding: 0 0.5rem;
+}
+#hd .lnb .searchIcon .form-show .search-pc {
+  border: 0;
 }
 #hd .lnb .personIcon {
   font-size: 1.6rem;
-  line-height: 0;
 }
 
-#hj_swiper .swiper-wrapper {
-  height: 700px;
+#main_slide {
+  padding-top: 65px;
+}
+
+#hj_swiper .swiper-wrapper .swiper-slide {
+  padding-top: 36.46%;
+  height: 0;
 }
 #hj_swiper .swiper-wrapper .swiper-slide .txt_group {
-  display: inline-block;
+  display: flex;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 8rem;
-  display: flex;
   color: #333;
   flex-direction: column;
   justify-content: center;

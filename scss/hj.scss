@@ -11,6 +11,7 @@ $bgGray:#F4EDE7;
     margin-top: -1rem;
 }
 #hd{
+    width: 100vw;
     z-index: 100;
     h1{
         img{
@@ -82,25 +83,37 @@ $bgGray:#F4EDE7;
     .lnb{
         .searchIcon{
             font-size: 1.3rem;
-            line-height: 1.1;
+            line-height: 1.85;
+            .form-show{
+                right: 7rem;
+                .a-search{                    
+                display: block;
+                padding: 0 .5rem;
+                }
+                .search-pc{
+                    border:0;
+                }
+            }
         }
         .personIcon{
             font-size: 1.6rem;
-            line-height: 0;
         }
     }
 }
+#main_slide{
+    padding-top: 65px;
+}
 #hj_swiper{
     .swiper-wrapper{
-        height: 700px;
         .swiper-slide{
+            padding-top: 36.46%;
+            height: 0;
             .txt_group{
-                display: inline-block; 
+                display: flex; 
                 position: absolute;
                 top: 0;
                 bottom: 0;
                 left: 8rem;
-                display: flex;
                 color: #333;
                 flex-direction: column;
                 justify-content: center;                
