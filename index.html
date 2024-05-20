@@ -112,27 +112,38 @@
     <section id="main_slide">
         <div class="swiper mySwiper" id="hj_swiper">
             <div class="swiper-wrapper">
-              <div class="swiper-slide hj-slide1">                
-                <p></p>                
+              <div class="swiper-slide hj-slide1 position-relative">
+                <div class="txt_group">
+                    <p class="slide_title">모두가 행복한 공간으로,<span class="br_span mt--1"></span><strong>"와요(WAYO)"!</strong></p>   
+                    <p class="slide_txt">반려동물 걱정에 여행 포기는 그만! 와요와 행복한 반려생활을 보내요.</p>
+                </div>          
               </div>
-              <div class="swiper-slide hj-slide2">                
-                <p></p>                
+              <div class="swiper-slide hj-slide2 position-relative">                
+                <div class="txt_group">
+                    <p class="slide_title"> With My Family<span class="br_span mt--1"></span><strong>반려동물과 함께하는 삶</strong></p>   
+                    <p class="slide_txt">소중한 나의 '집'에 방문하고, '가족'같은 반려동물을 돌보는<span class="br_span"></span>
+                    펫시터이기에, 단 항명의 펫시터라도 심사숙고하여 선발합니다.</p>
+                </div>                                
               </div>
-              <div class="swiper-slide hj-slide3">               
-                <p></p>                               
+              <div class="swiper-slide hj-slide3 position-relative"> 
+                <div class="txt_group">
+                    <p class="slide_title"> 래핑찰리와 함께하는<span class="br_span mt--1"></span><strong>안전한 산책</strong></p>   
+                    <p class="slide_txt">와요 10시간 이상 이용자들에게 15ml 스프레이 증정(선착순)<span class="br_span"></span>
+                    이지세이프 클립+워킹세이프 스프레이 120ml 기간 한정 15%할인</p>
+                </div>              
+                                               
               </div>
             </div>
             <div class="swiper-pagination"></div>
           </div>
           <script>
             var swiper = new Swiper("#hj_swiper", {
-              spaceBetween: 30,
-              centeredSlides: true,
+            
               loop:true,
-            //   autoplay: {
-            //     delay: 2500,
-            //     disableOnInteraction: false,
-            //   },
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
               pagination: {
                 el: ".swiper-pagination",
                 clickable: true,

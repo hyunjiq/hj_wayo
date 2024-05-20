@@ -1,5 +1,15 @@
 $bgYellow:#E1DF00;
 $bgGray:#F4EDE7;
+.br_span{
+    display: block;
+    line-height: 0 !important;
+    overflow: hidden !important;
+    color: transparent !important;
+
+}
+.mt--1{
+    margin-top: -1rem;
+}
 #hd{
     z-index: 100;
     h1{
@@ -83,10 +93,29 @@ $bgGray:#F4EDE7;
 #hj_swiper{
     .swiper-wrapper{
         height: 700px;
+        .swiper-slide{
+            .txt_group{
+                display: inline-block; 
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 8rem;
+                display: flex;
+                color: #333;
+                flex-direction: column;
+                justify-content: center;                
+                .slide_title{
+                    font-size: 4rem;
+                    font-weight: 300;
+                }
+                .slide_txt{
+                    font-size: 0.9rem;
+                }
+            }            
+        }
         .hj-slide1{
             background-image: url(../img/hj_img/main_banner/banner1.jpg);
             background-repeat: no-repeat;
-
         }
         .hj-slide2{
             background-image: url(../img/hj_img/main_banner/banner2.jpg);
@@ -94,7 +123,6 @@ $bgGray:#F4EDE7;
         }
         .hj-slide3{
             background-color:$bgGray;
-            position: relative;
             &:after{
                 background-image: url(../img/hj_img/main_banner/safe_items_img.png);
                 background-repeat: no-repeat;
@@ -179,7 +207,8 @@ $bgGray:#F4EDE7;
 #quik{
     position: fixed;
     bottom: 2rem;
-    right: 1rem;   
+    right: 1rem; 
+    z-index: 1000;  
     #quikBtn{
         transform: translateY(.9rem);
         z-index: 1;        
@@ -219,6 +248,8 @@ $bgGray:#F4EDE7;
 
 }
 #ft{
+    padding-top: 5rem;
+    padding-bottom: 5rem;
     .ft-icon{
         li{
             background: #ddd;
