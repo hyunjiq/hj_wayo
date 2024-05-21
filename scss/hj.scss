@@ -103,6 +103,10 @@ $bgGray:#F4EDE7;
 #main_slide{
     padding-top: 65px;
 }
+#with_place{
+    margin-top: 7rem;
+    background: #D3DFFF;
+}
 #hj_swiper{
     .swiper-wrapper{
         .swiper-slide{
@@ -123,6 +127,14 @@ $bgGray:#F4EDE7;
                 }
                 .slide_txt{
                     font-size: 0.9rem;
+                }
+            }
+            .main_slide_video{
+                position: absolute;
+                right: 8rem;
+                bottom: 2rem;                
+                iframe{
+                border-radius: 2rem;
                 }
             }            
         }
@@ -263,6 +275,12 @@ $bgGray:#F4EDE7;
 #ft{
     padding-top: 5rem;
     padding-bottom: 5rem;
+    .ft_menu{
+        .ft_menu_li{
+            border-right: 1px solid #666;
+            line-height: 1;
+        }
+    }
     .ft-icon{
         li{
             background: #ddd;
