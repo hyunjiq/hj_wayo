@@ -12,6 +12,8 @@
 #hd {
   width: 100vw;
   z-index: 100;
+  background-color: rgba(255, 255, 255, 0.7529411765);
+  backdrop-filter: blur(15px);
 }
 #hd h1 img {
   height: 2rem;
@@ -51,7 +53,7 @@
   padding: 1rem 2rem;
 }
 #hd .d1 .d1_li .d1_a {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
 }
 #hd .d1 .d1_li .d2 {
   top: 100%;
