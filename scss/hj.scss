@@ -18,7 +18,7 @@ $bgGray:#F4EDE7;
     
     h1{
         img{
-            height: 2rem;
+            height: 2.5rem;
         }
     }
     .d1{
@@ -278,22 +278,32 @@ $bgGray:#F4EDE7;
 #ft{
     padding-top: 5rem;
     padding-bottom: 5rem;
-    .ft_menu{
-        .ft_menu_li{
-            border-right: 1px solid #666;
-            line-height: 1;
+    .ft_right{
+        .ft_menu{
+            .ft_menu_li{
+                border-right: 1px solid #666;
+                line-height: 1;
+            }
         }
-    }
-    .ft-icon{
-        li{
-            background: #ddd;
-            font-size: 1.7rem;
-            line-height: 1;
-            border-radius: .5rem;
-            padding: .3rem;
-            a{
-                color: #999;
+        .ft-icon{
+            li{
+                background: #ddd;
+                font-size: 1.7rem;
+                line-height: 1;
+                border-radius: .5rem;
+                padding: .3rem;
+                a{
+                    color: #999;
+                }
             }
         }
     }
+    .ft_left{
+        h1{
+            img{
+                height: 4rem;
+            }
+        }
+    }
+    
 }

@@ -16,7 +16,7 @@
   backdrop-filter: blur(15px);
 }
 #hd h1 img {
-  height: 2rem;
+  height: 2.5rem;
 }
 #hd .d1:hover:before {
   content: "";
@@ -211,17 +211,20 @@
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
-#ft .ft_menu .ft_menu_li {
+#ft .ft_right .ft_menu .ft_menu_li {
   border-right: 1px solid #666;
   line-height: 1;
 }
-#ft .ft-icon li {
+#ft .ft_right .ft-icon li {
   background: #ddd;
   font-size: 1.7rem;
   line-height: 1;
   border-radius: 0.5rem;
   padding: 0.3rem;
 }
-#ft .ft-icon li a {
+#ft .ft_right .ft-icon li a {
   color: #999;
+}
+#ft .ft_left h1 img {
+  height: 4rem;
 }
