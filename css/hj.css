@@ -94,11 +94,6 @@
   padding-top: 65px;
 }
 
-#with_place {
-  margin-top: 7rem;
-  background: #D3DFFF;
-}
-
 #hj_swiper .swiper-wrapper .swiper-slide {
   padding-top: 36.46%;
   height: 0;
@@ -159,6 +154,42 @@
   width: 100%;
   padding: 6rem;
   bottom: 0;
+}
+
+#with_place {
+  margin-top: 7rem;
+  background: #D3DFFF;
+}
+
+#placeSwiper.swiper {
+  padding: 10rem;
+}
+#placeSwiper .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#placeSwiper .swiper-pagination-bullet {
+  display: block;
+  max-width: 200px;
+  width: auto;
+  height: auto;
+  text-align: center;
+  line-height: 1;
+  font-size: 1rem;
+  color: #000;
+  opacity: 1;
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+  margin: 0.5rem 0;
+}
+#placeSwiper .swiper-pagination-bullet-active {
+  color: #fff;
+  background: #007aff;
 }
 
 #quik {

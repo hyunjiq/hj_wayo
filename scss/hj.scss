@@ -106,10 +106,6 @@ $bgGray:#F4EDE7;
 #main_slide{
     padding-top: 65px;
 }
-#with_place{
-    margin-top: 7rem;
-    background: #D3DFFF;
-}
 #hj_swiper{
     .swiper-wrapper{
         .swiper-slide{
@@ -173,6 +169,42 @@ $bgGray:#F4EDE7;
                 bottom:0;
             }
         }
+    }
+}
+#with_place{
+    margin-top: 7rem;
+    background: #D3DFFF;
+    
+}
+#placeSwiper{
+    &.swiper {padding: 10rem;
+    }
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-pagination-bullet {
+        display: block;
+        max-width:200px;
+        width: auto;
+        height: auto;
+        text-align: center;
+        line-height: 1;
+        font-size: 1rem;
+        color: #000;
+        opacity: 1;
+        background: #fff;
+        border-radius: .5rem;
+        padding: 1rem 0;
+        margin: .5rem 0;
+    }  
+    .swiper-pagination-bullet-active {
+        color: #fff;
+        background: #007aff;
     }
 }
 // #app_download{

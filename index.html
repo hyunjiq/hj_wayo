@@ -197,7 +197,28 @@
     <section id="live_review"></section>
     <section id="with_place" class="margin">
         <div class="container px-0">
-            <img src="./img/hj_img/sectionPlace.jpg" alt="" class="sectionPlace">
+            <!-- <img src="./img/hj_img/sectionPlace.jpg" alt="" class="sectionPlace"> -->
+            <div class="swiper mySwiper d-flex" id="placeSwiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">Slide 1</div>
+                  <div class="swiper-slide">Slide 2</div>
+                  <div class="swiper-slide">Slide 3</div>
+                  <div class="swiper-slide">Slide 4</div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <script>
+                const petPlace = ["동반숙소","동반카페","동물병원","매장찾기"]
+                const plSwiper = new Swiper("#placeSwiper.mySwiper", {
+                  pagination: {
+                    el: "#placeSwiper .swiper-pagination",
+                    clickable: true,
+                    renderBullet: function (index, className) {
+                      return `<span class= ${className} > ${petPlace[index]} </span>`;
+                    },
+                  },
+                });
+            </script>
         </div>        
     </section>
     <section id="social_program"></section>    
