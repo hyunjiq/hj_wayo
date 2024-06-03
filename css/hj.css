@@ -97,6 +97,9 @@
 #hj_swiper .swiper-wrapper .swiper-slide {
   padding-top: 36.46%;
   height: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 #hj_swiper .swiper-wrapper .swiper-slide .txt_group {
   display: flex;
@@ -107,6 +110,10 @@
   color: #333;
   flex-direction: column;
   justify-content: center;
+}
+#hj_swiper .swiper-wrapper .swiper-slide .txt_group p {
+  transform: translateY(100px);
+  opacity: 0;
 }
 #hj_swiper .swiper-wrapper .swiper-slide .txt_group .slide_title {
   font-size: 4rem;
@@ -125,11 +132,9 @@
 }
 #hj_swiper .swiper-wrapper .hj-slide1 {
   background-image: url(../img/hj_img/main_banner/banner1.jpg);
-  background-repeat: no-repeat;
 }
 #hj_swiper .swiper-wrapper .hj-slide2 {
   background-image: url(../img/hj_img/main_banner/banner2.jpg);
-  background-repeat: no-repeat;
 }
 #hj_swiper .swiper-wrapper .hj-slide3 {
   background-color: #F4EDE7;
@@ -155,26 +160,44 @@
   padding: 6rem;
   bottom: 0;
 }
+#hj_swiper .swiper-wrapper .swiper-slide-active .txt_group p {
+  transform: translateY(0);
+  opacity: 1;
+  transition: 1s;
+}
 
 #with_place {
   margin-top: 7rem;
   background: #D3DFFF;
 }
 
-#placeSwiper.swiper {
-  padding: 10rem;
-}
-#placeSwiper .swiper-slide {
+#placeSwiper .swiper-wrapper .place-slide {
   text-align: center;
   font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 10rem;
 }
-#placeSwiper .swiper-pagination-bullet {
+#placeSwiper .swiper-wrapper .place-slide .swiper-slide {
+  border: 1px solid #000;
+}
+#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumimg {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  margin: auto;
+  overflow: hidden;
+}
+#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumimg img {
+  width: calc(100% + 15px);
   display: block;
-  max-width: 200px;
+  margin-left: -7.5px;
+  margin-top: -15px;
+}
+#placeSwiper .placeSwiper-pagination {
+  width: auto;
+}
+#placeSwiper .placeSwiper-pagination .swiper-pagination-bullet {
+  display: block;
+  min-width: 200px;
   width: auto;
   height: auto;
   text-align: center;
@@ -187,9 +210,9 @@
   padding: 1rem 0;
   margin: 0.5rem 0;
 }
-#placeSwiper .swiper-pagination-bullet-active {
+#placeSwiper .placeSwiper-pagination .swiper-pagination-bullet-active {
   color: #fff;
-  background: #007aff;
+  background: #6a92fe;
 }
 
 #quik {

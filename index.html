@@ -143,6 +143,11 @@
 
 
         </script>
+        <script src="text.js"></script>
+        <script>
+            const d1_a = "";
+            const d1_aNo = 0;
+        </script>
     </header>    
     <section id="main_slide">
         <div class="swiper mySwiper" id="hj_swiper">
@@ -198,20 +203,81 @@
     <section id="with_place" class="margin">
         <div class="container px-0">
             <!-- <img src="./img/hj_img/sectionPlace.jpg" alt="" class="sectionPlace"> -->
-            <div class="swiper mySwiper d-flex" id="placeSwiper">
+            <div class="swiper mySwiper" id="placeSwiper">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide">Slide 1</div>
-                  <div class="swiper-slide">Slide 2</div>
-                  <div class="swiper-slide">Slide 3</div>
-                  <div class="swiper-slide">Slide 4</div>
+                    <div class="swiper-slide place-slide with_hotel">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="thumimg">
+                                        <img src="./img/hj_img/hotel/hotel_grang.jpg" alt="그랑모던풀빌라">
+                                    </div>
+                                    <p class="thumtitle">그랑모던풀빌라</p>
+                                    <p class="thumadress">경북포항시</p>
+                                    <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                </div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                                <div class="swiper-slide">Slide 8</div>
+                                <div class="swiper-slide">Slide 9</div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>                        
+                    </div>
+                    <div class="swiper-slide place-slide with_cafe">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    slide1
+                                </div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                                <div class="swiper-slide">Slide 6</div>
+                                <div class="swiper-slide">Slide 7</div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>         
+                    </div>
+                    <div class="swiper-slide place-slide with_clinic">
+                        <div class="swiper mySwiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">Slide 1</div>
+                                <div class="swiper-slide">Slide 2</div>
+                                <div class="swiper-slide">Slide 3</div>
+                                <div class="swiper-slide">Slide 4</div>
+                                <div class="swiper-slide">Slide 5</div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>         
+                    </div>
+                    <div class="swiper-slide place-slide with_other">
+
+                    </div>
+                    <script>
+                        const _plSwiper = new Swiper(".place-slide .mySwiper", {
+                        slidesPerView: 3,
+                        spaceBetween: 10,
+                        pagination: {
+                            el: "place-slide .swiper-pagination",
+                            type: "fraction",
+                        },
+                        });
+                    </script>
                 </div>
-                <div class="swiper-pagination"></div>
+                <div class="swiper-pagination placeSwiper-pagination"></div>
             </div>
             <script>
                 const petPlace = ["동반숙소","동반카페","동물병원","매장찾기"]
                 const plSwiper = new Swiper("#placeSwiper.mySwiper", {
-                  pagination: {
-                    el: "#placeSwiper .swiper-pagination",
+                    allowTouchMove: false,
+                    pagination: {
+                    el: "#placeSwiper .swiper-pagination.placeSwiper-pagination",
                     clickable: true,
                     renderBullet: function (index, className) {
                       return `<span class= ${className} > ${petPlace[index]} </span>`;
