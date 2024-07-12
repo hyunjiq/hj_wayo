@@ -170,18 +170,44 @@
   margin-top: 7rem;
   background: #D3DFFF;
 }
+#with_place .place-bg-focus {
+  background: url(../img/hj_img/hotel/hotel_grang.jpg) no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 15%;
+  top: 0;
+  z-index: 11;
+}
 
+#placeSwiper {
+  padding: 10rem 0;
+  position: unset;
+}
+#placeSwiper p {
+  margin: 0;
+}
+#placeSwiper .swiper-wrapper {
+  z-index: 12;
+}
 #placeSwiper .swiper-wrapper .place-slide {
   text-align: center;
   font-size: 18px;
-  padding: 10rem;
+}
+#placeSwiper .swiper-wrapper .place-slide .swiper {
+  position: unset;
 }
 #placeSwiper .swiper-wrapper .place-slide .swiper-slide {
-  border: 1px solid #000;
+  background: #fff;
+  padding: 2rem 0;
+  border: 3px solid #fff;
+  box-sizing: border-box;
+  max-height: 275px;
+  padding: 2rem 1.5rem;
 }
 #placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumimg {
-  width: 8rem;
-  height: 8rem;
+  width: 7rem;
+  height: 7rem;
   border-radius: 50%;
   margin: auto;
   overflow: hidden;
@@ -192,27 +218,66 @@
   margin-left: -7.5px;
   margin-top: -15px;
 }
+#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumtitle {
+  font-size: 1.2rem;
+  font-weight: 900;
+  margin-top: 0.5rem;
+}
+#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumadress {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumtext {
+  font-size: 0.8rem;
+  color: #666;
+}
+#placeSwiper .swiper-wrapper .place-slide .swiper-slide-active {
+  border: 3px solid #6a92fe;
+}
+#placeSwiper .swiper-wrapper .place-slide .pagiBtn {
+  position: absolute;
+  right: 0;
+  bottom: 100%;
+}
+#placeSwiper .swiper-wrapper .place-slide .pagiBtn div {
+  font-size: 1rem;
+  position: unset;
+  margin: 0;
+}
+#placeSwiper .swiper-wrapper .place-slide .pagiBtn div::after {
+  color: #333;
+  font-size: 1rem;
+  font-weight: bold;
+}
 #placeSwiper .placeSwiper-pagination {
   width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
 }
 #placeSwiper .placeSwiper-pagination .swiper-pagination-bullet {
-  display: block;
-  min-width: 200px;
-  width: auto;
+  min-width: 260px;
   height: auto;
   text-align: center;
   line-height: 1;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: #000;
   opacity: 1;
   background: #fff;
   border-radius: 0.5rem;
-  padding: 1rem 0;
-  margin: 0.5rem 0;
+  padding: 1.5rem 1rem 1.5rem 3rem;
+  margin: 0.2rem 0;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
 }
 #placeSwiper .placeSwiper-pagination .swiper-pagination-bullet-active {
   color: #fff;
   background: #6a92fe;
+  z-index: 15;
 }
 
 #quik {

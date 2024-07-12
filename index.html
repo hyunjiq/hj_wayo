@@ -34,7 +34,7 @@
     <!-- 플러그인 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
- 
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <link href="//unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="//unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- 커스터마이징 -->
@@ -143,11 +143,6 @@
 
 
         </script>
-        <script src="text.js"></script>
-        <script>
-            const d1_a = "";
-            const d1_aNo = 0;
-        </script>
     </header>    
     <section id="main_slide">
         <div class="swiper mySwiper" id="hj_swiper">
@@ -201,89 +196,255 @@
     <section id="main_service"></section>
     <section id="live_review"></section>
     <section id="with_place" class="margin">
-        <div class="container px-0">
-            <!-- <img src="./img/hj_img/sectionPlace.jpg" alt="" class="sectionPlace"> -->
-            <div class="swiper mySwiper" id="placeSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide place-slide with_hotel">
-                        <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="thumimg">
-                                        <img src="./img/hj_img/hotel/hotel_grang.jpg" alt="그랑모던풀빌라">
-                                    </div>
-                                    <p class="thumtitle">그랑모던풀빌라</p>
-                                    <p class="thumadress">경북포항시</p>
-                                    <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
-                                </div>
-                                <div class="swiper-slide">Slide 2</div>
-                                <div class="swiper-slide">Slide 3</div>
-                                <div class="swiper-slide">Slide 4</div>
-                                <div class="swiper-slide">Slide 5</div>
-                                <div class="swiper-slide">Slide 6</div>
-                                <div class="swiper-slide">Slide 7</div>
-                                <div class="swiper-slide">Slide 8</div>
-                                <div class="swiper-slide">Slide 9</div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>                        
-                    </div>
-                    <div class="swiper-slide place-slide with_cafe">
-                        <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    slide1
-                                </div>
-                                <div class="swiper-slide">Slide 2</div>
-                                <div class="swiper-slide">Slide 3</div>
-                                <div class="swiper-slide">Slide 4</div>
-                                <div class="swiper-slide">Slide 5</div>
-                                <div class="swiper-slide">Slide 6</div>
-                                <div class="swiper-slide">Slide 7</div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>         
-                    </div>
-                    <div class="swiper-slide place-slide with_clinic">
-                        <div class="swiper mySwiper">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">Slide 1</div>
-                                <div class="swiper-slide">Slide 2</div>
-                                <div class="swiper-slide">Slide 3</div>
-                                <div class="swiper-slide">Slide 4</div>
-                                <div class="swiper-slide">Slide 5</div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-                        </div>         
-                    </div>
-                    <div class="swiper-slide place-slide with_other">
+        <div class="place-bg container px-0 d-flex justify-content-end position-relative">
+            
+            <div class="col-6">
+                <div class="swiper mySwiper" id="placeSwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide place-slide with_hotel">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <!-- <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/hotel/hotel_grang.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div> -->
 
+                                    <script>
+                                        $.ajax({
+                                            url : "place.json",
+                                            type : "GET",
+                                            dataType : "json",
+                                            success : function(place){
+                                                let hotelSlide = "";
+                                                place.hotel.forEach((e, i) => {                                                    
+                                                    hotelSlide +=
+                                                            `<div class="swiper-slide">
+                                                                <div class="${e.cls}">
+                                                                    <img src="${e.img}" alt="">
+                                                                </div>
+                                                                <p class="${e.p.cls[0]}">${e.p.title}</p>
+                                                                <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                                                                <p class="${e.p.cls[2]}">${e.p.text}</p>
+                                                            </div>`                                                    
+                                                });                 
+                                                $(".with_hotel .swiper-wrapper").html(hotelSlide);                              
+                                            },
+                                            error : function(){
+                                                console.log('안됨')
+                                            }
+                                        })
+                                        // const _slide = document.querySelectorAll(".place-slide .swiper-slide");
+                                        // _slide.addEventListener("click", function(){
+                                            
+                                        // })
+                                    </script>
+                                </div>
+                                <div class="pagiBtn d-flex justify-content-center align-items-center col-2">    
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div>                                
+                            </div>                        
+                        </div>
+                        <div class="swiper-slide place-slide with_cafe">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">
+                                    <script>
+                                        $.ajax({
+                                            url : "place.json",
+                                            type : "GET",
+                                            dataType : "json",
+                                            success : function(place){
+                                                let cafeSlide = "";
+                                                place.cafe.forEach((e, i) => {                                                    
+                                                    cafeSlide +=
+                                                            `<div class="swiper-slide">
+                                                                <div class="${e.cls}">
+                                                                    <img src="${e.img}" alt="">
+                                                                </div>
+                                                                <p class="${e.p.cls[0]}">${e.p.title}</p>
+                                                                <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                                                                <p class="${e.p.cls[2]}">${e.p.text}</p>
+                                                            </div>`
+                                                });
+                                                $(".with_cafe .swiper-wrapper").html(cafeSlide)
+                                            },
+                                            error : function(){
+                                                console.log('안됨')
+                                            }
+                                        })
+                                    </script>
+                                </div>
+                                <div class="pagiBtn d-flex justify-content-center align-items-center col-2">    
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div> 
+                            </div>         
+                        </div>
+                        <div class="swiper-slide place-slide with_clinic">
+                            <div class="swiper mySwiper">
+                                <div class="swiper-wrapper">                                    
+                                    <script>
+                                        $.ajax({
+                                            url : "place.json",
+                                            type : "GET",
+                                            dataType : "json",
+                                            success : function(place){
+                                                let clinicSlide = "";
+                                                place.clinic.forEach((e, i) => {                                                    
+                                                    clinicSlide +=
+                                                            `<div class="swiper-slide">
+                                                                <div class="${e.cls}">
+                                                                    <img src="${e.img}" alt="">
+                                                                </div>
+                                                                <p class="${e.p.cls[0]}">${e.p.title}</p>
+                                                                <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                                                                <p class="${e.p.cls[2]}">${e.p.text}</p>
+                                                            </div>`
+                                                });
+                                                $(".with_clinic .swiper-wrapper").html(clinicSlide)
+                                            },
+                                            error : function(){
+                                                console.log('안됨')
+                                            }
+                                        })
+                                    </script>                                    
+                                </div>
+                                <div class="pagiBtn d-flex justify-content-center align-items-center col-2">    
+                                    <div class="swiper-button-prev"></div>
+                                    <div class="swiper-pagination"></div>
+                                    <div class="swiper-button-next"></div>
+                                </div> 
+                            </div>         
+                        </div>
+                        <div class="swiper-slide place-slide with_other">
+    
+                        </div>
+                        <script>
+                            // $(".place-slide .swiper-wrapper").on("click", ".swiper-slide", function() {
+                            //     const imgUrl = $(this).find("img").attr("src");
+                            //     $(".place-slide .swiper-slide").removeClass("swiper-slide-active")
+                            //     $(this).addClass("swiper-slide-active")
+                            //     $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat `);
+
+                            // });
+                            // $(".swiper-slide-active").on(function(){
+                            //     const imgUrl = $(this).find("img").attr("src");
+                            //     $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat `);
+                            // })
+                            const _plSwiper = new Swiper(".with_hotel .mySwiper ", {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                            loop: true,
+                            pagination: {
+                                el: ".with_hotel .swiper-pagination",
+                                type: "fraction",
+                            },
+                            navigation: {
+                                nextEl: ".with_hotel .swiper-button-next",
+                                prevEl: ".with_hotel .swiper-button-prev",
+                            },
+                            autoplay: {
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            },
+                            on: {
+                                slideChange: function () {
+                                     const activeSlide = this.slides[this.activeIndex];  
+                                     // active slide  내의   img 태그의  src 값 저장해줘
+                                     const imgUrl = $(activeSlide).find("img").attr("src");
+                                    $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
+                                 
+                                }
+                            }
+                            
+                            
+                            });
+                            
+                            const _plSwiper2 = new Swiper(".with_cafe .mySwiper ", {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                            loop: true,
+                            pagination: {
+                                el: ".with_cafe .swiper-pagination",
+                                type: "fraction",
+                            },
+                            navigation: {
+                                nextEl: ".with_cafe .swiper-button-next",
+                                prevEl: ".with_cafe .swiper-button-prev",
+                            },
+                            autoplay: {
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            },
+                            on: {
+                                slideChange: function () {
+                                     const activeSlide = this.slides[this.activeIndex];  
+                                     // active slide  내의   img 태그의  src 값 저장해줘
+                                     const imgUrl = $(activeSlide).find("img").attr("src");
+                                    $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
+                                 
+                                }
+                            }
+                            
+                            
+                            });
+                            
+                            const _plSwiper3 = new Swiper(".with_clinic .mySwiper ", {
+                            slidesPerView: 3,
+                            spaceBetween: 10,
+                            loop: true,
+                            pagination: {
+                                el: ".with_clinic .swiper-pagination",
+                                type: "fraction",
+                            },
+                            navigation: {
+                                nextEl: ".with_clinic .swiper-button-next",
+                                prevEl: ".with_clinic .swiper-button-prev",
+                            },
+                            autoplay: {
+                                delay: 2500,
+                                disableOnInteraction: false,
+                            },
+                            on: {
+                                slideChange: function () {
+                                     const activeSlide = this.slides[this.activeIndex];  
+                                     // active slide  내의   img 태그의  src 값 저장해줘
+                                     const imgUrl = $(activeSlide).find("img").attr("src");
+                                    $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
+                                 
+                                }
+                            }
+                            
+                            
+                            });
+                            
+                        </script>
                     </div>
-                    <script>
-                        const _plSwiper = new Swiper(".place-slide .mySwiper", {
-                        slidesPerView: 3,
-                        spaceBetween: 10,
-                        pagination: {
-                            el: "place-slide .swiper-pagination",
-                            type: "fraction",
-                        },
-                        });
-                    </script>
+                    <div class="place-bg-focus"></div>
+                    <div class="swiper-pagination placeSwiper-pagination"></div>                    
                 </div>
-                <div class="swiper-pagination placeSwiper-pagination"></div>
             </div>
+            <!-- <img src="./img/hj_img/sectionPlace.jpg" alt="" class="sectionPlace"> -->
+            
             <script>
                 const petPlace = ["동반숙소","동반카페","동물병원","매장찾기"]
                 const plSwiper = new Swiper("#placeSwiper.mySwiper", {
-                    allowTouchMove: false,
+                    allowTouchMove: false,                    
                     pagination: {
                     el: "#placeSwiper .swiper-pagination.placeSwiper-pagination",
                     clickable: true,
                     renderBullet: function (index, className) {
-                      return `<span class= ${className} > ${petPlace[index]} </span>`;
+                      return `<span class= ${className} > ${petPlace[index]} <i class="bi bi-chevron-right"></i></span>`;
                     },
                   },
                 });
+                
             </script>
         </div>        
     </section>
