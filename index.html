@@ -179,7 +179,7 @@
     <section id="with_place" class="margin">
         <div class="place-bg container px-0 d-flex justify-content-end position-relative">    
             <div class="col-6">
-                <div class="place-bg-focus"></div>
+                
                 <div class="swiper p_swiper" id="placeSwiper">
                     <div class="swiper-wrapper p_swiper-wrapper">
                         <div class="swiper-slide place-slide with_hotel" data-btn="동반숙소">
@@ -485,10 +485,11 @@
                             
                         </script>
                     </div>                    
-                    <div class="swiper-pagination placeSwiper-pagination"></div>                    
+                    <div class="swiper-pagination placeSwiper-pagination"></div>  
+                    <!-- <div class="place-bg-focus"></div>                   -->
                 </div>
             </div>
-            <!-- <img src="./img/hj_img/sectionPlace.jpg" alt="" class="sectionPlace"> -->
+            
            <script>
                 const plSwiper = new Swiper("#placeSwiper", {
                     allowTouchMove: false,      
@@ -496,14 +497,48 @@
                     el: ".placeSwiper-pagination",
                     clickable: true,
                     renderBullet: function (index, className) {
-                      return `<button class= ${className} > ${this.slides[index].dataset.btn} <i class="bi bi-chevron-right"></i></button>`;
+                      return `<button class= ${className} ><span>${this.slides[index].dataset.btn}</span> <i class="bi bi-chevron-right"></i></button>`;
                       
+                    }        
+                    },
+                    on: {
+                        slideChangeTransitionEnd: function () {
+                            const bullets = document.querySelectorAll('.placeSwiper-pagination .swiper-pagination-bullet');
+                            const bgfocus = document.querySelectorAll('.place-bg-focus');
+
+                            bgfocus.forEach(el => {
+                                el.classList.add('d-none');
+                                el.classList.remove('d-block');
+                            });
+
+                            bullets.forEach((bullet, index) => {
+                                if (bullet.classList.contains('swiper-pagination-bullet-active')) {
+                                    if (bgfocus[index]) {
+                                        bgfocus[index].classList.add('d-block');
+                                        bgfocus[index].classList.remove('d-none');
+                                    }
+                                }
+                            });
+                        }
                     }
-                    
-                  },
                 });
 
-                document.querySelectorAll(".c_swiper").forEach(function(c_swiper){
+                const swiperContainer = document.querySelector("#placeSwiper");
+                const slides = document.querySelectorAll(".place-slide");
+
+                for (let i = 0; i < slides.length; i++) {
+                    
+                    let bgFocus = document.createElement("div");                    
+                    bgFocus.className = i == 0 ?`place-bg-focus bg-focus${i} d-block` : `place-bg-focus bg-focus${i} d-none`;                    
+                    swiperContainer.appendChild(bgFocus);
+
+                }
+                
+
+                
+
+
+                document.querySelectorAll(".c_swiper").forEach(function(c_swiper, i){
                     new Swiper(c_swiper, {
                                 slidesPerView: 3,
                                 spaceBetween: 10,
@@ -517,28 +552,56 @@
                                     prevEl: ".pagiBtn .swiper-button-prev",
                                 },
                                 autoplay: {
-                                    delay: 2500,
+                                    delay: 3000,
                                     disableOnInteraction: false,
                                 },
                                 on: {
                                     slideChange: function () {
-                                    //const activeSlide = this.slides[this.activeIndex];
-                                    const activeSlide = this.slides[this.activeIndex];  
-                                    // active slide  내의   img 태그의  src 값 저장해줘
-                                    //const imgUrl = $(".place-slide.active-slide .swiper-slide.swiper-slide-active").find("img").attr("src");
-                                    const imgUrl = $(activeSlide).find("img").attr("src");
-                                    $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
                                     
-                                    
+                                    const parentSlides = document.querySelectorAll('.place-slide'); 
+                                    const bgFocusElements = document.querySelectorAll('.place-bg-focus');
+
+                                    parentSlides.forEach((parentSlide, parentIndex) => {
                                         
+                                        const activeChildSlide = parentSlide.querySelector('.swiper-slide-active');
+                                        
+                                        if (activeChildSlide) {
+                                            const imgElement = activeChildSlide.querySelector('img');
+                                            const imgUrl = imgElement ? imgElement.getAttribute('src') : null;
+                                            
+                                            
+                                            if (bgFocusElements[parentIndex]) {
+                                                bgFocusElements[parentIndex].style.backgroundImage = imgUrl ? `url(${imgUrl})` : 'none';
+                                            }
+                                        } else {
+                                            
+                                            if (bgFocusElements[parentIndex]) {
+                                                bgFocusElements[parentIndex].style.backgroundImage = 'none';
+                                            }
                                         }
+                                    });
+                                }
+
+                                    //slideChangeTransitionEnd: function () {
+                                        
+                                        //const _imgUrl = c_swiper.querySelector("img").getAttribute("src")
+                                        //const activeSlide = $("#placeSwiper .place-slide .c_swiper-wrapper .swiper-slide-active");
+                                        //const imgUrl = $(activeSlides).find("img").attr("src");
+                                        //$(".place-bg-focus").css("background-image", `url(${imgUrl})`);
+                                        
+                                        // console.log(c_swiper.querySelectorAll(`.swiper-slide img`).getAttribute("src"))                            
+                                    //}
+                                    // slideChangeTransitionEnd: function () {
+                                    // const activeSlide = this.slides[this.activeIndex];  
+                                    // //active slide  내의   img 태그의  src 값 저장해줘
+                                    // const imgUrl = $(activeSlide).find("img").attr("src");                              
+                                    // $(".place-bg-focus").css("background-image", `url(${imgUrl})`);
+                                   //}
+                                    
                                 }
                                 
-                            });
+                    });
                 })
-                // const imgUrl = $(".place-slide.swiper-slide-active .swiper-slide.swiper-slide-active").find("img").attr("src");
-                // console.log(imgUrl)
-                // $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
             </script>
         </div>        
     </section>

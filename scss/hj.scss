@@ -10,6 +10,7 @@ $bgGray:#F4EDE7;
 .mt--1{
     margin-top: -1rem;
 }
+
 #hd{
     width: 100vw;
     z-index: 100;
@@ -192,14 +193,12 @@ $bgGray:#F4EDE7;
     margin-top: 7rem;
     background: #D3DFFF;
     .place-bg-focus{
-            background: url(../img/hj_img/hotel/hotel_grang.jpg) no-repeat;
+            background: no-repeat;
             position: absolute;
-            width: 100%;
+            min-width: 500px;
             height: 100%;
-            left: 15%;
+            left: 200px;
             top: 0;
-            z-index: 11;
-        
     } 
 }
 #placeSwiper{
@@ -263,28 +262,49 @@ $bgGray:#F4EDE7;
         justify-content: center;
         top: 0;
         bottom: 0;       
-        left: 0; 
-        
+        left: 0;         
         .swiper-pagination-bullet {
-             min-width: 260px;
+            width: 100%;
             height: auto;
-            text-align: center;
             line-height: 1;
             font-size: 1.3rem;
-            color: #000;
             opacity: 1;
-            background: #fff;
-            border-radius: .5rem;
-            padding: 1.5rem 1rem 1.5rem 3rem;
             margin: .2rem 0;
             display: flex;
-            justify-content: space-between;
+            align-items: center;
             position: relative;
+            color: #333;
+            background-color: transparent;
+            span{
+                border-radius: .5rem 0 0 .5rem; 
+                padding: 1.5rem 0 1.5rem 3rem;
+                width: 200px;
+                background: #fff;
+                text-align: start;
+            }
+            i{
+                display: none;
+                align-items: center;
+                justify-content: center;                
+                width: 50px;
+                height: 100%;
+                background-color: #6a92fe;
+                border-radius:0 .5rem .5rem 0;
+                margin: .2rem 0;
+                box-sizing: border-box;
+            }
         }  
         .swiper-pagination-bullet-active {
             color: #fff;
-            background: #6a92fe;
             z-index: 15;
+            span{
+               
+                background: #6a92fe;
+            }
+            i{  
+                display: flex;
+                
+            }
         }
     }  
 }
