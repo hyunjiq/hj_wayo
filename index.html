@@ -34,6 +34,7 @@
     <!-- 플러그인 -->
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <script src="//cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+ 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <link href="//unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="//unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -43,7 +44,7 @@
     <title>WAYO</title>
 </head>
 <body>
-    <header id="hd" class="d-flex justify-content-between position-fixed align-items-center px-5">
+    <header id="hd" class="d-flex justify-content-between position-fixed align-items-center px-5"> 
         <h1 class="mb-0"><a class="d-block" href="#"><img class="logo_img d-block" src="./img/logo/logo-04.svg" alt="와요로고"></a></h1>
         <ul class="d1 d-flex mb-0 p-0 ">
             <script>
@@ -73,53 +74,6 @@
                     }
                 })
             </script>
-            <!-- <li class="d1_li position-relative">
-                <a class="d1_a" href="">펫시터가 와요</a>
-                <ul class="d2 position-absolute ps-0">
-                    <li class="d2_li"><a href="">방문 돌봄</a></li>
-                    <li class="d2_li"><a href="">집중 호스피스</a></li>
-                    <li class="d2_li"><a href="">펫 플래닛</a></li>
-                    <li class="d2_li"><a href="">웨딩케어</a></li>
-                    <li class="d2_li"><a href="">안심 픽업&드랍</a></li>
-                
-            </li>
-            <li class="d1_li position-relative">
-                <a class="d1_a" href="">훈련사</a>
-                <ul class="d2 position-absolute ps-0">
-                    <li class="d2_li"><a href="">훈련사 소개</a></li>
-                    <li class="d2_li"><a href="">훈련사에게 물어봐</a></li>
-                </ul>
-            </li>
-            <li class="d1_li position-relative">
-                <a class="d1_a" href="">플레이스</a>
-                <ul class="d2 position-absolute ps-0">
-                    <li class="d2_li"><a href="">입점 문의</a></li>
-                    <li class="d2_li"><a href="">매장 찾기</a></li>
-                </ul>
-            </li>
-            <li class="d1_li position-relative">
-                <a class="d1_a" href="">사회공헌</a>
-                <ul class="d2 position-absolute ps-0">
-                    <li class="d2_li"><a href="">봉사활동</a></li>
-                    <li class="d2_li"><a href="">지식 나눔</a></li>
-                    <li class="d2_li"><a href="">심리 상담</a></li>
-                </ul>
-            </li>
-            <li class="d1_li position-relative">
-                <a class="d1_a" href="">커뮤니티</a>
-                <ul class="d2 position-absolute ps-0">
-                    <li class="d2_li"><a href="">실시간 후기</a></li>
-                    <li class="d2_li"><a href="">구독 서비스</a></li>
-                </ul>
-            </li>
-            <li class="d1_li position-relative">
-                <a class="d1_a" href="">펫트너</a>
-                <ul class="d2 position-absolute ps-0">
-                    <li class="d2_li"><a href="">펫시터 지원</a></li>
-                    <li class="d2_li"><a href="">훈련사 지원</a></li>
-                    <li class="d2_li"><a href="">산책 케어 지원</a></li>
-                </ul>
-            </li> -->
         </ul>
         <ul class="d-flex lnb mb-0 p-0">
             <li class="mx-2 searchIcon d-flex">
@@ -179,9 +133,9 @@
                     <p class="slide_title">모두가 행복한 공간으로,<span class="br_span mt--1"></span><strong>"와요(WAYO)"!</strong></p>   
                     <p class="slide_txt">반려동물 걱정에 여행 포기는 그만! 와요와 행복한 반려생활을 보내요.</p>
                 </div>
-                <div class="main_slide_video">
+                <!-- <div class="main_slide_video">
                     <iframe width="800" height="400" src="https://www.youtube.com/embed/RWRm1vHZN8A" title="강아지 펫시터가 집으로 와요" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> 
-                </div>         
+                </div>          -->
               </div>
               <div class="swiper-slide hj-slide2 position-relative">                
                 <div class="txt_group">
@@ -223,24 +177,47 @@
     <section id="main_service"></section>
     <section id="live_review"></section>
     <section id="with_place" class="margin">
-        <div class="place-bg container px-0 d-flex justify-content-end position-relative">
-            
+        <div class="place-bg container px-0 d-flex justify-content-end position-relative">    
             <div class="col-6">
-                <div class="swiper mySwiper" id="placeSwiper">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide place-slide with_hotel">
-                            <div class="swiper mySwiper">
-                                <div class="swiper-wrapper">
-                                    <!-- <div class="swiper-slide">
+                <div class="place-bg-focus"></div>
+                <div class="swiper p_swiper" id="placeSwiper">
+                    <div class="swiper-wrapper p_swiper-wrapper">
+                        <div class="swiper-slide place-slide with_hotel" data-btn="동반숙소">
+                            <div class="swiper c_swiper">
+                                <div class="swiper-wrapper c_swiper-wrapper">
+                                    <div class="swiper-slide">
                                         <div class="thumimg">
                                             <img src="./img/hj_img/hotel/hotel_grang.jpg" alt="그랑모던풀빌라">
                                         </div>
-                                        <p class="thumtitle">그랑모던풀빌라</p>
+                                        <p class="thumtitle">그랑모던풀빌라1</p>
                                         <p class="thumadress">경북포항시</p>
                                         <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
-                                    </div> -->
-
-                                    <script>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/hotel/hotel_gout.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라2</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/hotel/hotel_petclass2.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라3</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/hotel/hotel_thepetel.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라4</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div>
+                                    <!-- <script>
                                         $.ajax({
                                             url : "place.json",
                                             type : "GET",
@@ -258,17 +235,13 @@
                                                                 <p class="${e.p.cls[2]}">${e.p.text}</p>
                                                             </div>`                                                    
                                                 });                 
-                                                $(".with_hotel .swiper-wrapper").html(hotelSlide);                              
+                                                $(".with_hotel .c_swiper-wrapper").html(hotelSlide);                              
                                             },
                                             error : function(){
                                                 console.log('안됨')
                                             }
-                                        })
-                                        // const _slide = document.querySelectorAll(".place-slide .swiper-slide");
-                                        // _slide.addEventListener("click", function(){
-                                            
-                                        // })
-                                    </script>
+                                        });
+                                    </script> -->
                                 </div>
                                 <div class="pagiBtn d-flex justify-content-center align-items-center col-2">    
                                     <div class="swiper-button-prev"></div>
@@ -277,10 +250,39 @@
                                 </div>                                
                             </div>                        
                         </div>
-                        <div class="swiper-slide place-slide with_cafe">
-                            <div class="swiper mySwiper">
-                                <div class="swiper-wrapper">
-                                    <script>
+                        <div class="swiper-slide place-slide with_cafe" data-btn="동반카페">
+                            <div class="swiper c_swiper">
+                                <div class="swiper-wrapper c_swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/cafe/cafe_ijoa.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라11</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div><div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/cafe/cafe_pumpkin.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라22</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div><div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/cafe/cafe_mung.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라33</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div><div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/cafe/cafe_pawseason.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라44</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div>
+                                    <!-- <script>
                                         $.ajax({
                                             url : "place.json",
                                             type : "GET",
@@ -304,7 +306,7 @@
                                                 console.log('안됨')
                                             }
                                         })
-                                    </script>
+                                    </script> -->
                                 </div>
                                 <div class="pagiBtn d-flex justify-content-center align-items-center col-2">    
                                     <div class="swiper-button-prev"></div>
@@ -313,10 +315,42 @@
                                 </div> 
                             </div>         
                         </div>
-                        <div class="swiper-slide place-slide with_clinic">
-                            <div class="swiper mySwiper">
-                                <div class="swiper-wrapper">                                    
-                                    <script>
+                        <div class="swiper-slide place-slide with_clinic" data-btn="동물병원">
+                            <div class="swiper c_swiper">
+                                <div class="swiper-wrapper c_swiper-wrapper">    
+                                    <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/hospital/hospital_24guro.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라1111</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/hospital/hospital_bareun.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라2222</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/hospital/hospital_royal.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라3333</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="thumimg">
+                                            <img src="./img/hj_img/hospital/hospital_sol.jpg" alt="그랑모던풀빌라">
+                                        </div>
+                                        <p class="thumtitle">그랑모던풀빌라4444</p>
+                                        <p class="thumadress">경북포항시</p>
+                                        <p class="thumtext">#모던 #그랑모던풀빌라 #반려견동반 #포항 #포항여행</p>
+                                    </div>                                
+                                    <!-- <script>
                                         $.ajax({
                                             url : "place.json",
                                             type : "GET",
@@ -340,7 +374,7 @@
                                                 console.log('안됨')
                                             }
                                         })
-                                    </script>                                    
+                                    </script>                                     -->
                                 </div>
                                 <div class="pagiBtn d-flex justify-content-center align-items-center col-2">    
                                     <div class="swiper-button-prev"></div>
@@ -348,9 +382,6 @@
                                     <div class="swiper-button-next"></div>
                                 </div> 
                             </div>         
-                        </div>
-                        <div class="swiper-slide place-slide with_other">
-    
                         </div>
                         <script>
                             // $(".place-slide .swiper-wrapper").on("click", ".swiper-slide", function() {
@@ -365,135 +396,154 @@
                             //     $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat `);
                             // })
                             
-                            const _plSwiper = new Swiper(".with_hotel .mySwiper ", {
-                            slidesPerView: 3,
-                            spaceBetween: 10,
-                            loop: true,
-                            pagination: {
-                                el: ".with_hotel .swiper-pagination",
-                                type: "fraction",
-                            },
-                            navigation: {
-                                nextEl: ".with_hotel .swiper-button-next",
-                                prevEl: ".with_hotel .swiper-button-prev",
-                            },
-                            autoplay: {
-                                delay: 2500,
-                                disableOnInteraction: false,
-                            },
-                            on: {
-                                slideChange: function () {
-                                     const activeSlide = this.slides[this.activeIndex];  
-                                     // active slide  내의   img 태그의  src 값 저장해줘
-                                     const imgUrl = $(activeSlide).find("img").attr("src");
-                                    $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
+                            // const _plSwiper = new Swiper(".place-slide .c_swiper ", {
+                            // slidesPerView: 3,
+                            // spaceBetween: 10,
+                            // loop: true,
+                            // pagination: {
+                            //     el: ".with_hotel .swiper-pagination",
+                            //     type: "fraction",
+                            // },
+                            // navigation: {
+                            //     nextEl: ".with_hotel .swiper-button-next",
+                            //     prevEl: ".with_hotel .swiper-button-prev",
+                            // },
+                            // autoplay: {
+                            //     delay: 2500,
+                            //     disableOnInteraction: false,
+                            // },
+                            // on: {
+                            //     slideChange: function () {
+                            //          const activeSlide = this.slides[this.activeIndex];  
+                            //          // active slide  내의   img 태그의  src 값 저장해줘
+                            //          const imgUrl = $(activeSlide).find("img").attr("src");
+                            //         $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
                                  
-                                }
-                            }
+                            //     }
+                            // }
                             
                             
-                            });
+                            // });
                             
-                            const _plSwiper2 = new Swiper(".with_cafe .mySwiper ", {
-                            slidesPerView: 3,
-                            spaceBetween: 10,
-                            loop: true,
-                            pagination: {
-                                el: ".with_cafe .swiper-pagination",
-                                type: "fraction",
-                            },
-                            navigation: {
-                                nextEl: ".with_cafe .swiper-button-next",
-                                prevEl: ".with_cafe .swiper-button-prev",
-                            },
-                            autoplay: {
-                                delay: 2500,
-                                disableOnInteraction: false,
-                            },
-                            on: {
-                                slideChange: function () {
-                                     const activeSlide = this.slides[this.activeIndex];  
-                                     // active slide  내의   img 태그의  src 값 저장해줘
-                                     const imgUrl = $(activeSlide).find("img").attr("src");
-                                    $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
+                            // const _plSwiper2 = new Swiper(".with_cafe .c_swiper ", {
+                            // slidesPerView: 3,
+                            // spaceBetween: 10,
+                            // loop: true,
+                            // pagination: {
+                            //     el: ".with_cafe .swiper-pagination",
+                            //     type: "fraction",
+                            // },
+                            // navigation: {
+                            //     nextEl: ".with_cafe .swiper-button-next",
+                            //     prevEl: ".with_cafe .swiper-button-prev",
+                            // },
+                            // autoplay: {
+                            //     delay: 2500,
+                            //     disableOnInteraction: false,
+                            // },
+                            // on: {
+                            //     slideChange: function () {
+                            //          const activeSlide = this.slides[this.activeIndex];  
+                            //          // active slide  내의   img 태그의  src 값 저장해줘
+                            //          const imgUrl = $(activeSlide).find("img").attr("src");
+                            //         $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
                                  
-                                }
-                            }
+                            //     }
+                            // }
                             
                             
-                            });
+                            // });
                             
-                            const _plSwiper3 = new Swiper(".with_clinic .mySwiper ", {
-                            slidesPerView: 3,
-                            spaceBetween: 10,
-                            loop: true,
-                            pagination: {
-                                el: ".with_clinic .swiper-pagination",
-                                type: "fraction",
-                            },
-                            navigation: {
-                                nextEl: ".with_clinic .swiper-button-next",
-                                prevEl: ".with_clinic .swiper-button-prev",
-                            },
-                            autoplay: {
-                                delay: 2500,
-                                disableOnInteraction: false,
-                            },
-                            on: {
-                                slideChange: function () {
-                                     const activeSlide = this.slides[this.activeIndex];  
-                                     // active slide  내의   img 태그의  src 값 저장해줘
-                                     const imgUrl = $(activeSlide).find("img").attr("src");
-                                    $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
+                            // const _plSwiper3 = new Swiper(".with_clinic .c_swiper ", {
+                            // slidesPerView: 3,
+                            // spaceBetween: 10,
+                            // loop: true,
+                            // pagination: {
+                            //     el: ".with_clinic .swiper-pagination",
+                            //     type: "fraction",
+                            // },
+                            // navigation: {
+                            //     nextEl: ".with_clinic .swiper-button-next",
+                            //     prevEl: ".with_clinic .swiper-button-prev",
+                            // },
+                            // autoplay: {
+                            //     delay: 2500,
+                            //     disableOnInteraction: false,
+                            // },
+                            // on: {
+                            //     slideChange: function () {
+                            //          const activeSlide = this.slides[this.activeIndex];  
+                            //          // active slide  내의   img 태그의  src 값 저장해줘
+                            //          const imgUrl = $(activeSlide).find("img").attr("src");
+                            //         $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
                                  
-                                }
-                            }
+                            //     }
+                            // }
                             
                             
-                            });
+                            // });
                             
                         </script>
-                    </div>
-                    <div class="place-bg-focus"></div>
+                    </div>                    
                     <div class="swiper-pagination placeSwiper-pagination"></div>                    
                 </div>
             </div>
             <!-- <img src="./img/hj_img/sectionPlace.jpg" alt="" class="sectionPlace"> -->
-            
-            <script>
-                const petPlace = ["동반숙소","동반카페","동물병원","매장찾기"]
-                const plSwiper = new Swiper("#placeSwiper.mySwiper", {
-                    allowTouchMove: false,                    
+           <script>
+                const plSwiper = new Swiper("#placeSwiper", {
+                    allowTouchMove: false,      
                     pagination: {
-                    el: "#placeSwiper .swiper-pagination.placeSwiper-pagination",
+                    el: ".placeSwiper-pagination",
                     clickable: true,
                     renderBullet: function (index, className) {
-                      return `<span class= ${className} > ${petPlace[index]} <i class="bi bi-chevron-right"></i></span>`;
-                    },
+                      return `<button class= ${className} > ${this.slides[index].dataset.btn} <i class="bi bi-chevron-right"></i></button>`;
+                      
+                    }
+                    
                   },
                 });
-                
+
+                document.querySelectorAll(".c_swiper").forEach(function(c_swiper){
+                    new Swiper(c_swiper, {
+                                slidesPerView: 3,
+                                spaceBetween: 10,
+                                loop: true,
+                                pagination: {
+                                    el: c_swiper.querySelector('.pagiBtn .swiper-pagination'),
+                                    type: "fraction",
+                                },
+                                navigation: {
+                                    nextEl: ".pagiBtn .swiper-button-next",
+                                    prevEl: ".pagiBtn .swiper-button-prev",
+                                },
+                                autoplay: {
+                                    delay: 2500,
+                                    disableOnInteraction: false,
+                                },
+                                on: {
+                                    slideChange: function () {
+                                    //const activeSlide = this.slides[this.activeIndex];
+                                    const activeSlide = this.slides[this.activeIndex];  
+                                    // active slide  내의   img 태그의  src 값 저장해줘
+                                    //const imgUrl = $(".place-slide.active-slide .swiper-slide.swiper-slide-active").find("img").attr("src");
+                                    const imgUrl = $(activeSlide).find("img").attr("src");
+                                    $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
+                                    
+                                    
+                                        
+                                        }
+                                }
+                                
+                            });
+                })
+                // const imgUrl = $(".place-slide.swiper-slide-active .swiper-slide.swiper-slide-active").find("img").attr("src");
+                // console.log(imgUrl)
+                // $(".place-bg-focus").css("background", `url(${imgUrl}) no-repeat`);
             </script>
         </div>        
     </section>
     <section id="social_program"></section>    
     <section id="form_tag"></section>
-    <!-- <section id="app_download" class="app_bg1 app_bg2 app_bg3">
-       
-        <div class="container d-flex align-items-center justify-content-between" id="jeAppbanner">
-            <div class="align-items-center">
-                <h4 class="d-flex app_come">펫토피아로 와요</h4>
-                <h6>첫 회원가입시 2000P 적립</h6>
-            </div>
-            <div><a href="javascript:void(0)" class="app_down d-flex">어플 다운로드</a></div>
-            
-        </div> 
-        
-         <img src="//hyunjiq.github.io/petopia/img/img_je/bn_cloud1.svg" alt="왼쪽 구름" class="app_bg1"> -->
-        <!-- <img src="//hyunjiq.github.io/petopia/img/img_je/bn_animal.svg" alt="동물 세 마리" class="app_bg2"> -->
-        <!-- <img src="//hyunjiq.github.io/petopia/img/img_je/bn_cloud2.svg" alt="오른쪽 구름" class="app_bg3">   
-    </section> -->
-
     <aside id="quik" class="d-flex align-items-center flex-column">
         <i id="quikBtn">
             <img src="/img/hj_img/fixed_dog.png" alt="퀵버튼">
@@ -565,5 +615,6 @@
             </div>
         </div>
     </footer>
+    
 </body>
 </html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Swiper demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+  <!-- Link Swiper's CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    
+  <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+    }
+
+    .swiper-pagination-bullet {
+      width: auto;
+      height: auto;
+      font-size: 22px;
+      border-radius: 0;
+      opacity: 1 !important;
+      background-color: aliceblue;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: red !important;
+    }
+
+    .mySwiper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mySwiper .p_swiper {
+      order: 2
+    }
+
+    .mySwiper .p_indecate {
+      position: relative !important;
+      display: flex !important;
+      flex-direction: column;
+      left: unset !important;
+      right: unset !important;
+      top: unset !important;
+      bottom: unset !important;
+      order: 1;
+      width: 150px
+    }
+    .swiper-slide{
+        background-color: white;
+    }
+    .child-pagination{
+
+
+    }
+    .child-swiper{
+        height: 20vw;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Swiper -->
+  <div class="mySwiper">
+    <div class="swiper p_swiper">
+      <div class="swiper-wrapper p_swiper-wrapper">
+        <div class="swiper-slide a" data-btn="동반숙소">
+          <div class="swiper-container child-swiper">
+            <div class="swiper-wrapper c_swiper-wrapper">
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <!-- <script>
+                    $.ajax({
+                        url : "place.json",
+                        type : "GET",
+                        dataType : "json",
+                        success : function(place){
+                            let hotelSlide = "";
+                            place.hotel.forEach((e, i) => {                                                    
+                                hotelSlide +=
+                                        `<div class="swiper-slide">
+                                            <p class="${e.p.cls[0]}">${e.p.title}</p>
+                                            <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                                            <p class="${e.p.cls[2]}">${e.p.text}</p>
+                                        </div>`                                                    
+                            });                 
+                            $(".a .c_swiper-wrapper").html(hotelSlide);                              
+                        },
+                        error : function(){
+                            console.log('안됨')
+                        }
+                    });    
+                </script> -->
+            </div>
+            <div class="swiper-pagination child-pagination"></div>
+          </div>
+        </div>
+        <div class="swiper-slide b" data-btn="동반까페">
+          <div class="swiper-container child-swiper">
+            <div class="swiper-wrapper c_swiper-wrapper">
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <!-- <script>
+                    $.ajax({
+                        url : "place.json",
+                        type : "GET",
+                        dataType : "json",
+                        success : function(place){
+                            let hotelSlide = "";
+                            place.hotel.forEach((e, i) => {                                                    
+                                hotelSlide +=
+                                        `<div class="swiper-slide">
+                                            <p class="${e.p.cls[0]}">${e.p.title}</p>
+                                            <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                                            <p class="${e.p.cls[2]}">${e.p.text}</p>
+                                        </div>`                                                    
+                            });                 
+                            $(".b .c_swiper-wrapper").html(hotelSlide);                              
+                        },
+                        error : function(){
+                            console.log('안됨')
+                        }
+                    });
+                </script> -->
+            </div>
+            <div class="swiper-pagination child-pagination"></div>
+          </div>
+        </div>
+        <div class="swiper-slide c" data-btn="동물병원">
+          <div class="swiper-container child-swiper">
+            <div class="swiper-wrapper c_swiper-wrapper">
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <div class="swiper-slide">
+                    <p class="${e.p.cls[0]}">${e.p.title}</p>
+                    <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                    <p class="${e.p.cls[2]}">${e.p.text}</p>
+                </div>
+                <!-- <script>
+                    $.ajax({
+                        url : "place.json",
+                        type : "GET",
+                        dataType : "json",
+                        success : function(place){
+                            let hotelSlide = "";
+                            place.hotel.forEach((e, i) => {                                                    
+                                hotelSlide +=
+                                        `<div class="swiper-slide">
+                                            <p class="${e.p.cls[0]}">${e.p.title}</p>
+                                            <p class="${e.p.cls[1]}">${e.p.adress}</p>
+                                            <p class="${e.p.cls[2]}">${e.p.text}</p>
+                                        </div>`                                                    
+                            });                 
+                            $(".c .c_swiper-wrapper").html(hotelSlide);                              
+                        },
+                        error : function(){
+                            console.log('안됨')
+                        }
+                    });
+                </script> -->
+            </div>
+            <div class="swiper-pagination child-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-pagination p_indecate"></div>
+  </div>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper .p_swiper", {
+        allowTouchMove: false,
+      spaceBetween: 0,
+      effect: "fade",
+      pagination: {
+        el: ".p_indecate",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return '<button class="' + className + '">' + this.slides[index].dataset.btn + '</button>';
+        },
+      },
+    });
+
+    // Initialize child Swipers
+    document.querySelectorAll('.child-swiper').forEach(function (childSwiper) {
+      new Swiper(childSwiper, {
+        loop: true,
+        slidesPerView: 3,  
+        pagination: {
+          el: childSwiper.querySelector('.child-pagination'),         
+          type: 'fraction',
+        },
+        autoplay: {
+          delay: 2500, // 2.5 seconds delay between slides
+          disableOnInteraction: false, // Autoplay won't stop on user interactions
+        },
+      });
+ 
+    });
+
+  
+  </script>
+</body>
+
+</html>
