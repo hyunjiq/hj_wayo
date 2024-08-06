@@ -9,6 +9,18 @@
   margin-top: -1rem;
 }
 
+.z-index5 {
+  z-index: 5;
+}
+
+.z-index0 {
+  z-index: 0;
+}
+
+button:focus-visible {
+  outline: none;
+}
+
 #hd {
   width: 100vw;
   z-index: 100;
@@ -170,17 +182,8 @@
   margin-top: 7rem;
   background: #D3DFFF;
 }
-#with_place .place-bg-focus {
-  background: no-repeat;
-  position: absolute;
-  min-width: 500px;
-  height: 100%;
-  left: 200px;
-  top: 0;
-}
 
 #placeSwiper {
-  padding: 10rem 0;
   position: unset;
 }
 #placeSwiper p {
@@ -193,10 +196,11 @@
   text-align: center;
   font-size: 18px;
 }
-#placeSwiper .swiper-wrapper .place-slide .swiper {
-  position: unset;
+#placeSwiper .swiper-wrapper .place-slide .c_swiper {
+  margin: 0;
+  padding: 8.5rem 0;
 }
-#placeSwiper .swiper-wrapper .place-slide .swiper-slide {
+#placeSwiper .swiper-wrapper .place-slide .c_swiper .swiper-slide {
   background: #fff;
   padding: 2rem 0;
   border: 3px solid #fff;
@@ -204,39 +208,42 @@
   max-height: 275px;
   padding: 2rem 1.5rem;
 }
-#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumimg {
+#placeSwiper .swiper-wrapper .place-slide .c_swiper .swiper-slide .thumimg {
   width: 7rem;
   height: 7rem;
   border-radius: 50%;
   margin: auto;
   overflow: hidden;
 }
-#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumimg img {
+#placeSwiper .swiper-wrapper .place-slide .c_swiper .swiper-slide .thumimg img {
   width: calc(100% + 15px);
   display: block;
   margin-left: -7.5px;
   margin-top: -15px;
 }
-#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumtitle {
+#placeSwiper .swiper-wrapper .place-slide .c_swiper .swiper-slide .thumtitle {
   font-size: 1.2rem;
   font-weight: 900;
   margin-top: 0.5rem;
 }
-#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumadress {
+#placeSwiper .swiper-wrapper .place-slide .c_swiper .swiper-slide .thumadress {
   font-size: 1rem;
   font-weight: 500;
 }
-#placeSwiper .swiper-wrapper .place-slide .swiper-slide .thumtext {
+#placeSwiper .swiper-wrapper .place-slide .c_swiper .swiper-slide .thumtext {
   font-size: 0.8rem;
   color: #666;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-#placeSwiper .swiper-wrapper .place-slide .swiper-slide-active {
-  border: 3px solid #6a92fe;
-}
-#placeSwiper .swiper-wrapper .place-slide .pagiBtn {
+#placeSwiper .swiper-wrapper .place-slide .c_swiper2 {
   position: absolute;
-  right: 0;
-  bottom: 100%;
+  max-width: 500px;
+  margin: 0;
+  left: 200px;
+}
+#placeSwiper .swiper-wrapper .place-slide .thumbsSlider.swiper-slide-thumb-active {
+  border: 3px solid #6a92fe;
 }
 #placeSwiper .swiper-wrapper .place-slide .pagiBtn div {
   font-size: 1rem;
@@ -256,6 +263,7 @@
   top: 0;
   bottom: 0;
   left: 0;
+  z-index: 100;
 }
 #placeSwiper .placeSwiper-pagination .swiper-pagination-bullet {
   width: 100%;
@@ -365,8 +373,4 @@
 }
 #ft .ft_left h1 img {
   height: 4rem;
-}
-
-.ytp-cued-thumbnail-overlay-image {
-  background-image: url(https://www.subway.co.kr/upload/banner/%EC%95%84%EB%B3%B4%EC%B9%B4%EB%8F%84%20%EC%8B%9C%EB%A6%AC%EC%A6%88_PC%20%EB%A9%94%EC%9D%B8%20%EB%B0%B0%EB%84%88_20240625091233176.jpg);
 }

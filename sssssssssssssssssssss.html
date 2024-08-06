@@ -1,0 +1,363 @@
+
+<!-- 처음 -->
+<script>
+    const plSwiper = new Swiper("#placeSwiper", {
+        allowTouchMove: false,   
+        effect: "fade",   
+        pagination: {
+        el: ".placeSwiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<button class= ${className} ><span>${this.slides[index].dataset.btn}</span> <i class="bi bi-chevron-right"></i></button>`;
+          
+        }        
+        },
+        on: {
+            slideChange: function () {
+                const bullets = document.querySelectorAll('.placeSwiper-pagination .swiper-pagination-bullet');
+                const bgfocus = document.querySelectorAll('.place-bg-focus');
+
+                bgfocus.forEach(el => {
+                    el.classList.add('z-index0');
+                    el.classList.remove('z-index5');
+                });
+
+                bullets.forEach((bullet, index) => {
+                    if (bullet.classList.contains('swiper-pagination-bullet-active')) {
+                        if (bgfocus[index]) {
+                            bgfocus[index].classList.add('z-index5');
+                            bgfocus[index].classList.remove('z-index0');
+                        }
+                    }
+                });
+            }
+        }
+    });
+
+    const swiperContainer = document.querySelector("#placeSwiper");
+    const slides = document.querySelectorAll(".place-slide");
+    
+
+    
+
+
+    document.querySelectorAll(".c_swiper").forEach(function(c_swiper, i){
+        new Swiper(c_swiper, {
+                    slidesPerView: 3,
+                    spaceBetween: 10,
+                    loop: true,
+                    pagination: {
+                        el: c_swiper.querySelector('.pagiBtn .swiper-pagination'),
+                        type: "fraction",
+                    },
+                    navigation: {
+                        nextEl: ".pagiBtn .swiper-button-next",
+                        prevEl: ".pagiBtn .swiper-button-prev",
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    on: {
+                        slideChange: function () {
+                        
+                        const parentSlides = document.querySelectorAll('.place-slide'); 
+                        const bgFocusElements = document.querySelectorAll('.place-bg-focus');
+
+                            parentSlides.forEach((parentSlide, parentIndex) => {
+                                
+                                const activeChildSlide = parentSlide.querySelector('.swiper-slide-active');
+                                
+                                if (activeChildSlide) {
+                                    const imgElement = activeChildSlide.querySelector('img');
+                                    const imgUrl = imgElement && imgElement.getAttribute('src');
+                                    
+                                    
+                                    bgFocusElements[parentIndex].style.backgroundImage = `url(${imgUrl})`
+                                    console.log(imgUrl)
+                                }
+                            });
+                        }
+
+                        
+                    }
+                    
+        });
+    })
+    var swiper = new Swiper(".c_swiper", {
+loop: true,
+spaceBetween: 10,
+slidesPerView: 3,
+freeMode: true,
+watchSlidesProgress: true,
+//   autoplay: {          // autoplay 옵션 추가
+//     delay: 3000,       // 슬라이드 간의 지연 시간 (밀리초 단위)
+//     disableOnInteraction: false,  // 상호작용 후에도 자동 재생 유지
+//   },
+});
+
+var swiper2 = new Swiper(".c_swiper2", {
+loop: true,
+spaceBetween: 10,
+navigation: {
+nextEl: ".swiper-button-next",
+prevEl: ".swiper-button-prev",
+},
+thumbs: {
+swiper: swiper,
+},
+//   autoplay: {          // autoplay 옵션 추가
+//     delay: 3000,       // 슬라이드 간의 지연 시간 (밀리초 단위)
+//     disableOnInteraction: false,  // 상호작용 후에도 자동 재생 유지
+//   },
+pagination: {           // pagination 옵션 추가
+el: ".swiper-pagination", // pagination 요소 선택자
+type: "fraction",     // pagination 타입 설정
+},
+});
+</script>
+
+
+
+
+<script>
+    const plSwiper = new Swiper("#placeSwiper", {
+        allowTouchMove: false, 
+        effect: "fade",     
+        pagination: {
+            el: ".placeSwiper-pagination",
+            clickable: true,
+            renderBullet: function (index, className) {
+            return `<button class= ${className} ><span>${this.slides[index].dataset.btn}</span> <i class="bi bi-chevron-right"></i></button>`;
+            
+            }        
+        },
+    });
+    const c_swiper = new Swiper(".c_swiper", {
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesProgress: true,                    
+        });
+
+    const imgswiper = new Swiper(".c_swiper2", {
+        loop: true,      
+        thumbs: {
+            swiper: c_swiper,
+        },
+        pagination: {
+            el: ".pagiBtn .swiper-pagination",
+            type: "fraction",
+         },
+        navigation: {
+            nextEl: ".pagiBtn .swiper-button-next",
+            prevEl: ".pagiBtn .swiper-button-prev",
+        }, 
+           
+        //   autoplay: {          // autoplay 옵션 추가
+        //     delay: 3000,       // 슬라이드 간의 지연 시간 (밀리초 단위)
+        //     disableOnInteraction: false,  // 상호작용 후에도 자동 재생 유지
+        //   },
+        
+    });
+</script>
+
+
+<!-- forEach 4-35 -->
+<script>
+    const plSwiper = new Swiper("#placeSwiper", {
+        allowTouchMove: false, 
+             
+        pagination: {
+        el: ".placeSwiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<button class= ${className} ><span>${this.slides[index].dataset.btn}</span> <i class="bi bi-chevron-right"></i></button>`;
+          
+        }        
+        },
+        
+    });
+
+    
+
+
+    document.querySelectorAll(".c_swiper").forEach(function(c_swiper, i){
+        new Swiper(c_swiper, {
+                    loop: true,
+                    spaceBetween: 10,
+                    slidesPerView: 3,
+                    freeMode: true,
+                    watchSlidesProgress: true,
+                    pagination: {
+                        el: c_swiper.querySelector('.pagiBtn .swiper-pagination'),
+                        type: "fraction",
+                    },
+                    navigation: {
+                        nextEl: ".pagiBtn .swiper-button-next",
+                        prevEl: ".pagiBtn .swiper-button-prev",
+                    },
+                    autoplay: {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    },
+                    on: {
+                        slideChange: function () {
+                        
+                        const parentSlides = document.querySelectorAll('.place-slide'); 
+                        const bgFocusElements = document.querySelectorAll('.place-bg-focus');
+
+                            parentSlides.forEach((parentSlide, parentIndex) => {
+                                
+                                const activeChildSlide = parentSlide.querySelector('.swiper-slide-active');
+                                
+                                if (activeChildSlide) {
+                                    const imgElement = activeChildSlide.querySelector('img');
+                                    const imgUrl = imgElement && imgElement.getAttribute('src');
+                                    
+                                    
+                                    bgFocusElements[parentIndex].style.backgroundImage = `url(${imgUrl})`
+                                    console.log(imgUrl)
+                                }
+                            });
+                        }
+
+                        
+                    }
+                    
+        });
+    })
+
+    document.querySelectorAll(".c_swiper2").forEach(function(c_swiper2, ii){
+        new Swiper(c_swiper2, {
+            loop: true,
+            spaceBetween: 10,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+            thumbs: {
+                swiper: c_swiper,
+            },
+            autoplay: {          // autoplay 옵션 추가
+                delay: 3000,       // 슬라이드 간의 지연 시간 (밀리초 단위)
+                disableOnInteraction: false,  // 상호작용 후에도 자동 재생 유지
+            },
+            pagination: {           // pagination 옵션 추가
+                el: ".swiper-pagination", // pagination 요소 선택자
+                type: "fraction",     // pagination 타입 설정
+            },
+        })
+    })
+
+</script>
+
+
+
+
+<!--잘됨 4-43 -->
+<script>
+    const plSwiper = new Swiper("#placeSwiper", {
+        allowTouchMove: false, 
+        
+        pagination: {
+        el: ".placeSwiper-pagination",
+        clickable: true,
+        renderBullet: function (index, className) {
+          return `<button class= ${className} ><span>${this.slides[index].dataset.btn}</span> <i class="bi bi-chevron-right"></i></button>`;
+          
+        }        
+        },
+        
+    });  
+
+    const c_swiper = new Swiper(".c_swiper", {
+        
+        loop: true,
+        spaceBetween: 10,
+        slidesPerView: 3,
+        freeMode: true,
+        watchSlidesProgress: true,
+        autoplay: {          // autoplay 옵션 추가
+            delay: 3000,       // 슬라이드 간의 지연 시간 (밀리초 단위)
+            disableOnInteraction: false,  // 상호작용 후에도 자동 재생 유지
+        },
+
+    });
+    
+    const swiper2 = new Swiper(".c_swiper2", {
+        loop: true,
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        thumbs: {
+            swiper: c_swiper,
+        },
+        autoplay: {          // autoplay 옵션 추가
+            delay: 3000,       // 슬라이드 간의 지연 시간 (밀리초 단위)
+            disableOnInteraction: false,  // 상호작용 후에도 자동 재생 유지
+        },
+        pagination: {           // pagination 옵션 추가
+            el: ".place-slide .swiper-pagination", // pagination 요소 선택자
+            type: "fraction",     // pagination 타입 설정
+        },
+    });
+</script>
+
+
+<!-- forEach -->
+<script>
+      const swiperConfigs = [
+                        {
+                            containerSelector: '.c_swiper',
+                            options: {
+                                loop: true,
+                                spaceBetween: 10,
+                                slidesPerView: 3,
+                                freeMode: true,
+                                watchSlidesProgress: true,
+                                autoplay: {
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                },
+                            },
+                        },
+                        {
+                            containerSelector: '.c_swiper2',
+                            options: {
+                                loop: true,
+                                navigation: {
+                                    nextEl: '.swiper-button-next',
+                                    prevEl: '.swiper-button-prev',
+                                },
+                                thumbs: {
+                                    swiper: null, 
+                                },
+                                autoplay: {
+                                    delay: 3000,
+                                    disableOnInteraction: false,
+                                },
+                                pagination: {
+                                    el: '.place-slide .swiper-pagination',
+                                    type: 'fraction',
+                                },
+                            },
+                        },
+                    ];
+
+                    swiperConfigs.forEach((config, i )=> {
+                        const container = document.querySelector(config.containerSelector);
+
+                        if (container) {
+                            if (config.containerSelector === '.c_swiper2') {
+                                
+                                config.options.thumbs.swiper = document.querySelector('.c_swiper').swiper;
+                            }
+
+                            new Swiper(container, config.options);
+                        }
+                    });
+
+</script>

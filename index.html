@@ -502,20 +502,20 @@
                     }        
                     },
                     on: {
-                        slideChangeTransitionEnd: function () {
+                        slideChange: function () {
                             const bullets = document.querySelectorAll('.placeSwiper-pagination .swiper-pagination-bullet');
                             const bgfocus = document.querySelectorAll('.place-bg-focus');
 
                             bgfocus.forEach(el => {
-                                el.classList.add('d-none');
-                                el.classList.remove('d-block');
+                                el.classList.add('z-index0');
+                                el.classList.remove('z-index5');
                             });
 
                             bullets.forEach((bullet, index) => {
                                 if (bullet.classList.contains('swiper-pagination-bullet-active')) {
                                     if (bgfocus[index]) {
-                                        bgfocus[index].classList.add('d-block');
-                                        bgfocus[index].classList.remove('d-none');
+                                        bgfocus[index].classList.add('z-index5');
+                                        bgfocus[index].classList.remove('z-index0');
                                     }
                                 }
                             });
@@ -529,7 +529,7 @@
                 for (let i = 0; i < slides.length; i++) {
                     
                     let bgFocus = document.createElement("div");                    
-                    bgFocus.className = i == 0 ?`place-bg-focus bg-focus${i} d-block` : `place-bg-focus bg-focus${i} d-none`;                    
+                    bgFocus.className = i == 0 ?`place-bg-focus bg-focus${i} z-index5` : `place-bg-focus bg-focus${i} z-index0`;                    
                     swiperContainer.appendChild(bgFocus);
 
                 }
@@ -561,42 +561,21 @@
                                     const parentSlides = document.querySelectorAll('.place-slide'); 
                                     const bgFocusElements = document.querySelectorAll('.place-bg-focus');
 
-                                    parentSlides.forEach((parentSlide, parentIndex) => {
-                                        
-                                        const activeChildSlide = parentSlide.querySelector('.swiper-slide-active');
-                                        
-                                        if (activeChildSlide) {
-                                            const imgElement = activeChildSlide.querySelector('img');
-                                            const imgUrl = imgElement ? imgElement.getAttribute('src') : null;
+                                        parentSlides.forEach((parentSlide, parentIndex) => {
                                             
+                                            const activeChildSlide = parentSlide.querySelector('.swiper-slide-active');
                                             
-                                            if (bgFocusElements[parentIndex]) {
-                                                bgFocusElements[parentIndex].style.backgroundImage = imgUrl ? `url(${imgUrl})` : 'none';
+                                            if (activeChildSlide) {
+                                                const imgElement = activeChildSlide.querySelector('img');
+                                                const imgUrl = imgElement && imgElement.getAttribute('src');
+                                                
+                                                
+                                                bgFocusElements[parentIndex].style.backgroundImage = `url(${imgUrl})`
+                                                console.log(imgUrl)
                                             }
-                                        } else {
-                                            
-                                            if (bgFocusElements[parentIndex]) {
-                                                bgFocusElements[parentIndex].style.backgroundImage = 'none';
-                                            }
-                                        }
-                                    });
-                                }
+                                        });
+                                    }
 
-                                    //slideChangeTransitionEnd: function () {
-                                        
-                                        //const _imgUrl = c_swiper.querySelector("img").getAttribute("src")
-                                        //const activeSlide = $("#placeSwiper .place-slide .c_swiper-wrapper .swiper-slide-active");
-                                        //const imgUrl = $(activeSlides).find("img").attr("src");
-                                        //$(".place-bg-focus").css("background-image", `url(${imgUrl})`);
-                                        
-                                        // console.log(c_swiper.querySelectorAll(`.swiper-slide img`).getAttribute("src"))                            
-                                    //}
-                                    // slideChangeTransitionEnd: function () {
-                                    // const activeSlide = this.slides[this.activeIndex];  
-                                    // //active slide  내의   img 태그의  src 값 저장해줘
-                                    // const imgUrl = $(activeSlide).find("img").attr("src");                              
-                                    // $(".place-bg-focus").css("background-image", `url(${imgUrl})`);
-                                   //}
                                     
                                 }
                                 
@@ -681,3 +660,4 @@
     
 </body>
 </html>
+
