@@ -195,6 +195,7 @@ button:focus-visible {
 #placeSwiper .swiper-wrapper .place-slide {
   text-align: center;
   font-size: 18px;
+  background-color: #D3DFFF;
 }
 #placeSwiper .swiper-wrapper .place-slide .c_swiper {
   margin: 0;
@@ -207,6 +208,8 @@ button:focus-visible {
   box-sizing: border-box;
   max-height: 275px;
   padding: 2rem 1.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 #placeSwiper .swiper-wrapper .place-slide .c_swiper .swiper-slide .thumimg {
   width: 7rem;
@@ -233,8 +236,6 @@ button:focus-visible {
 #placeSwiper .swiper-wrapper .place-slide .c_swiper .swiper-slide .thumtext {
   font-size: 0.8rem;
   color: #666;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 #placeSwiper .swiper-wrapper .place-slide .c_swiper2 {
   position: absolute;
@@ -255,17 +256,30 @@ button:focus-visible {
   font-size: 1rem;
   font-weight: bold;
 }
-#placeSwiper .placeSwiper-pagination {
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+#placeSwiper .p-pagination-wrap {
   top: 0;
   bottom: 0;
   left: 0;
   z-index: 100;
 }
-#placeSwiper .placeSwiper-pagination .swiper-pagination-bullet {
+#placeSwiper .p-pagination-wrap .placeSwiper-pagination {
+  width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: unset;
+}
+#placeSwiper .p-pagination-wrap .placeSwiper-pagination .swiper-pagination-bullet-active {
+  color: #fff;
+  z-index: 15;
+}
+#placeSwiper .p-pagination-wrap .placeSwiper-pagination .swiper-pagination-bullet-active span {
+  background: #6a92fe;
+}
+#placeSwiper .p-pagination-wrap .placeSwiper-pagination .swiper-pagination-bullet-active i {
+  display: flex;
+}
+#placeSwiper .p-pagination-wrap .swiper-pagination-bullet {
   width: 100%;
   height: auto;
   line-height: 1;
@@ -278,14 +292,14 @@ button:focus-visible {
   color: #333;
   background-color: transparent;
 }
-#placeSwiper .placeSwiper-pagination .swiper-pagination-bullet span {
+#placeSwiper .p-pagination-wrap .swiper-pagination-bullet span {
   border-radius: 0.5rem 0 0 0.5rem;
   padding: 1.5rem 0 1.5rem 3rem;
   width: 200px;
   background: #fff;
   text-align: start;
 }
-#placeSwiper .placeSwiper-pagination .swiper-pagination-bullet i {
+#placeSwiper .p-pagination-wrap .swiper-pagination-bullet i {
   display: none;
   align-items: center;
   justify-content: center;
@@ -295,16 +309,6 @@ button:focus-visible {
   border-radius: 0 0.5rem 0.5rem 0;
   margin: 0.2rem 0;
   box-sizing: border-box;
-}
-#placeSwiper .placeSwiper-pagination .swiper-pagination-bullet-active {
-  color: #fff;
-  z-index: 15;
-}
-#placeSwiper .placeSwiper-pagination .swiper-pagination-bullet-active span {
-  background: #6a92fe;
-}
-#placeSwiper .placeSwiper-pagination .swiper-pagination-bullet-active i {
-  display: flex;
 }
 
 #quik {

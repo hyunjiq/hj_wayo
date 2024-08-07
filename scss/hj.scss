@@ -210,6 +210,7 @@ button:focus-visible{
         .place-slide {
             text-align: center;
             font-size: 18px;
+            background-color: #D3DFFF;;
             .c_swiper{
                 margin: 0;
                 padding: 8.5rem 0;
@@ -220,6 +221,8 @@ button:focus-visible{
                     box-sizing: border-box;
                     max-height: 275px;
                     padding: 2rem 1.5rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                     .thumimg{
                         width: 7rem;
                         height: 7rem;
@@ -235,8 +238,8 @@ button:focus-visible{
                     }
                     .thumtitle{font-size: 1.2rem;font-weight:900; margin-top: .5rem;}
                     .thumadress{font-size: 1rem;font-weight:500;}
-                    .thumtext{font-size: 0.8rem; color: #666;overflow: hidden; 
-                        text-overflow: ellipsis;}
+                    .thumtext{font-size: 0.8rem; color: #666; 
+                        }
                 }
             }
             .c_swiper2{                            
@@ -263,15 +266,31 @@ button:focus-visible{
             }
         }
     }
-    .placeSwiper-pagination{
-        width: auto;        
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    .p-pagination-wrap{
         top: 0;
         bottom: 0;       
         left: 0;   
-        z-index: 100;      
+        z-index: 100;    
+        .placeSwiper-pagination{
+            width: auto;        
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: unset;  
+              
+            .swiper-pagination-bullet-active {
+                color: #fff;
+                z-index: 15;
+                span{
+                
+                    background: #6a92fe;
+                }
+                i{  
+                    display: flex;
+                    
+                }
+            }
+        }
         .swiper-pagination-bullet {
             width: 100%;
             height: auto;
@@ -302,20 +321,9 @@ button:focus-visible{
                 margin: .2rem 0;
                 box-sizing: border-box;
             }
-        }  
-        .swiper-pagination-bullet-active {
-            color: #fff;
-            z-index: 15;
-            span{
-               
-                background: #6a92fe;
-            }
-            i{  
-                display: flex;
-                
-            }
         }
-    }  
+    }
+      
 }
 
 
